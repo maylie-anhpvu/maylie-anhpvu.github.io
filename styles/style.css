@@ -1,0 +1,19 @@
+
+body {
+    background-color: rgba(247, 239, 214, 0.692);
+}
+h1,h3 {
+    color:rgb(190, 107, 39);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h3 {
+    font-family: verdana;
+    font-size: large;
+}
+
+p, li {
+    font-family: verdana;
+    font-size: small;
+
+}
