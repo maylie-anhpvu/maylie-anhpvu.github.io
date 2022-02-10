@@ -1,5 +1,10 @@
 body {
     background-color: rgba(247, 239, 214, 0.692);}
+
+h1, h1.title, h2, p, div a, div.intro .row, .column, table {
+    margin-left: 5%;
+    margin-right: 5%;
+} 
 h1.title{
     color:rgb(190, 107, 39);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
@@ -8,7 +13,6 @@ div.intro {
     color: rgba(255, 255, 255, 0.836);
     padding: 10px;
     height: auto;
-    margin: auto;
     background-color: rgb(190, 107, 39);
 }
 
