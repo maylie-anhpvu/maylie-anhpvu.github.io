@@ -2,35 +2,24 @@
 Lab 2 website
 
 Concept:
-Cooking website about 2 Jakarta and South Vietnamses dishes
+Cooking website about myself
 
-<div with header style>
-1. Chicken Satay with peanut sauce
-<div with header style>
-
-Content
-- Introduction about the food/cuisine
-    - Origins/history
-    - When locals eat it/ what it means for the locals
-    - Main ingredients, why is it special to be?
-- Images (x2)
-
-- Ingredients and methods 
-(table format: Ingredient & Ratio)
-(table format: Steps & Methods explanation)
+Home page
+1. Navigation bar
+    1.1. Education & Achievements
+    1.2. Work experience & Portfolio
+    1.3. Foodie hobbies
+    1.4. Connect with me
+2. Quick introduction about myself
+3. Welcoming texts
 
 
-2. Bun Bo Hue
+1.1. EDU & AWARDS
 
-Content
-- Introduction about the food/cuisine
-    - Origins/history
-    - When locals eat it/ what it means for the locals
-    - Main ingredients, why is it special to be?
-- Images (x2)
+1.3. FOODIE HOBBIES
+    - Food that I like and cooked before
+    - By cuisine
+    - Introduction, origins and images
 
-- Ingredients and methods 
-(table format: Ingredient & Ratio)
-(table format: Steps & Methods explanation)
 
 
