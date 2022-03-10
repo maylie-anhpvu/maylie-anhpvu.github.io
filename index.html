@@ -1,72 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Lab 5</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    var cName = "";
+    var cYear = 0;
+    var cImgurl = "";
+    var cEngine = "";
+    var cBrakes="";
+    
+    $.ajax({
+    type:"GET",
+    url:"sample.json",
+    success:function (response) {
+        cName = response.name;
+        cYear = response.year;
+        cImgurl = response.imageURL;
+
+        dictEng = response.engine;
+        dictBrk = response.brakes;
+
+        for (let engine in dictEng) {
+            cEngine += engine + ": " + dictEng[engine] + "<br>";
+        }
+        for (let brake in dictBrk) {
+            cBrakes += brake + ": " + dictBrk[brake] + "<br>";
+        }
+
+
+        $("#cName").append(cName);
+        $("#cYear").append(cYear);
+        $("#cImgurl").append("<img src='" + cImgurl + "' style='width:300px;height:200px;'>");
+        $("#cEngine").append(cEngine);
+        $("#cBrakes").append(cBrakes);
+
+    }
+    });
+
+</script>
 </head>
 <body>
 
-    <script>
-        var cName = "";
-        var cYear = 0;
-        var cImgurl = "";
-        var cEngine = "";
-        var cBrakes="";
-        
-        $.ajax({
-        type:"GET",
-        url:"sample.json",
-        success:function (response) {
-            cName = response.name;
-            cYear = response.year;
-            cImgurl = response.imageURL;
 
-            dictEng = response.engine;
-            dictBrk = response.brakes;
+<h3>Maylie (Anh) Vu - Lab 5</h3>
 
-            for (let engine in dictEng) {
-                cEngine += engine + ": " + dictEng[engine] + "<br>";
-            }
-            for (let brake in dictBrk) {
-                cBrakes += brake + ": " + dictBrk[brake] + "<br>";
-            }
-
-
-            $("#cName").append(cName);
-            $("#cYear").append(cYear);
-            $("#cImgurl").append("<img src='" + cBrakes + "'>");
-            $("#cEngine").append(cEngine);
-            $("#cBrakes").append(cBrakes);
-
-        }
-        });
-
-    </script>
-
-
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-      <div class="col-sm">Name</div>
-      <div class="col-sm" id="cName"></div>
+      <div class="col bg-light">Name</div>
+      <div class="col bg-warning" id="cName"></div>
     </div>
 
     <div class="row">
-        <div class="col-sm">Year</div>
-        <div class="col-sm" id="cYear"></div>
+        <div class="col bg-warning">Year</div>
+        <div class="col bg-light" id="cYear"></div>
     </div>
 
     <div class="row">
-        <div class="col-sm">Engines</div>
-        <div class="col-sm" id="cEngine"></div>
+        <div class="col bg-light">Engines</div>
+        <div class="col bg-warning" id="cEngine"></div>
     </div>
 
     <div class="row">
-        <div class="col-sm">Brakes</div>
-        <div class="col-sm" id="cBrakes"></div>
+        <div class="col bg-warning">Brakes</div>
+        <div class="col bg-light" id="cBrakes"></div>
     </div>
 
     <div class="row">
