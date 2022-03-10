@@ -1,144 +1,80 @@
 <!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewpoint" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
 
-        <title>Home Page</title>
-        <style>body {position: relative;}</style>
-    </head>
-  <body>
+    <script>
+        var cName = "";
+        var cYear = 0;
+        var cImgurl = "";
+        var cEngine = "";
+        var cBrakes="";
+        
+        $.ajax({
+        type:"GET",
+        url:"sample.json",
+        success:function (response) {
+            cName = response.name;
+            cYear = response.year;
+            cImgurl = response.imageURL;
+
+            dictEng = response.engine;
+            dictBrk = response.brakes;
+
+            for (let engine in dictEng) {
+                cEngine += engine + ": " + dictEng[engine] + "<br>";
+            }
+            for (let brake in dictBrk) {
+                cBrakes += brake + ": " + dictBrk[brake] + "<br>";
+            }
 
 
+            $("#cName").append(cName);
+            $("#cYear").append(cYear);
+            $("#cImgurl").append("<img src='" + cBrakes + "'>");
+            $("#cEngine").append(cEngine);
+            $("#cBrakes").append(cBrakes);
 
-<!-- Navbar menu -->    
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top d-print-block">
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#edu">Education</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#exp">Experience</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#hobbies">Hobbies</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#image">Images</a>
-        </li>
-    </ul>
-</nav>
+        }
+        });
 
-<!--Content-->
-<div id="about" class="container-fluid bg-light" style="padding-top:70px;padding-bottom:70px">
-    <h2>About me</h2>
-    <p>I'm a final year student at Ryerson (X) University and incoming tech associate at Scotia Bank.<br>
-    I grew up in Vietnam and moved to Toronto, Canada in 2017 for university.<br>
-    If you are also Vietnamese (or can read it)<br> <br>
-    Xin chào! Bạn có muốn đi uống cà phê không? <br>
-    (Hello! Do you want to grab a coffee together?)</p>
-</div>
+    </script>
 
-<div id="edu" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
-    <h2>Education</h2>
-    <h5>B. COMM. Business Technology Management. Minor in Computer Science</h5>
-        <ul> 
-            <li>Ryerson University | 2017 - 202</li>
-            <li>GPA: 3.58</li>
-            <li>Dean's list: 2017 -  2021</li>
-        </ul>
 
-        <h5>Extracurricular</h5>
-
-        <h6>1st place - Case competitions</h6>
-        <ul>
-            <li>2021: Best e-waste management solution (by TechTalent Accelerator)</li>
-            <li>2020: Best solution for operational excellence (by Loblaws)</li>
-        </ul>
-
-        <h6>Participation</h6>
-        <ul>
-            <li>Hack the North 2020 (Waterloo University)</li>
-            <li>Top 200 (Ryerson University - Ted Rogers School of Management</li>
-            <li>Director of Special events - Ryerson Data Science Association</li>
-        </ul>
-
-</div>
-
-<div id="exp" class="container-fluid bg-dark" style="padding-top:70px;padding-bottom:70px; color: white;">
-    <h2>Experience</h2>
-    <ul>
-        <li>05/2022: Tech Associaite @ Scotiabank (Spark New Grad Program)</li>
-        <li>04/2021 - 12/2021: IT Risk Analyst (coop) @ RBC</li>
-        <li>01/2021 - 04/2021: Tech & Operations Analyst (coop) @ BMO</li>
-        <li>04/2020 - 08/2020: Business Analytics specialist @ Manulife</li>
-        <li>06/2019 - 12/2019: Technical systems analyst @ CIBC</li>
-    </ul>
-</div>
-
-<div id="hobbies" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
-    <h2>Hobbies</h2>
-    <ul>
-        <li>Cooking and learning about different cuisinces, especially South East Asian and East Asian cuisines.</li>
-        <li>Visiting local boba tea shops in downtown</li>
-    </ul>
-</div>
-
-<div id="contact" class="container-fluid bg-light" style="padding-top:70px;padding-bottom:70px">
-    <h2>Contact</h2>
-    <ul>
-        <li>Linkedin</li>
-        <li>Email</li>
-        <li>Phone</li>
-    </ul>
-</div>
-
-<div id="image" class="carousel slide" data-ride="carousel" data-interval="4000">
-    <div class="carousel-item active">
-        <img class="d-flex w-100" src="images/HoiAnVN.jpg" alt="HoiAn">
-        <div class="carousel-caption d-none d-md-block">
-            <h5>Hoi An</h5>
-            <p>Viet Nam</p>
-        </div>
+<div class="container">
+    <div class="row">
+      <div class="col-sm">Name</div>
+      <div class="col-sm" id="cName"></div>
     </div>
-    <div class="carousel-item">
-        <img class="d-flex w-100" src="images/MontrealCA.jpg" alt="Montreal">
-        <div class="carousel-caption d-none d-md-block">
-            <h5>Montreal</h5>
-            <p>Canada</p>
-        </div>
-    </div>
-    <div class="carousel-item">
-        <img class="d-flex w-100" src="images/TorontoCA.jpg" alt="Toronto">
-        <div class="carousel-caption d-none d-md-block">
-            <h5>Toronto</h5>
-            <p>Canada</p>
-        </div>
-    </div>
-    <div class="carousel-item">
-        <img class="d-flex w-100" src="images/NusaPenidaINDO.jpg" alt="NSP">
-        <div class="carousel-caption d-none d-md-block">
-            <h5>Nusa Penida</h5>
-            <p>Indonesia</p>
-        </div>
-    </div>
-</div>
 
-<script>
-    $(document).ready(function(){
-      $('body').scrollspy({target: ".navbar", offset: 50});   
-    });
-</script>
+    <div class="row">
+        <div class="col-sm">Year</div>
+        <div class="col-sm" id="cYear"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">Engines</div>
+        <div class="col-sm" id="cEngine"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">Brakes</div>
+        <div class="col-sm" id="cBrakes"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">Image</div>
+        <div class="col-sm" id="cImgurl"></div>
+    </div>
     
-  </body>
+  </div>
+
+</body>
 </html>
