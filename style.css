@@ -1,6 +1,8 @@
+
+
 body {
   width: auto;
-  margin: 0 auto;
+  margin: 100px 50px 75px 100px;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -8,7 +10,7 @@ body {
 
 .container {
   width: 80%;
-  margin: 0 auto;
+  margin: 100px 50px 75px 100px;
 }
 
 /* This will format the whole fieldset content*/

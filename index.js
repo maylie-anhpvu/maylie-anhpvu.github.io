@@ -1,8 +1,8 @@
-
 var express = require('express'),
     bodyParser = require('body-parser'),
     alert = require('alert'),
     request = require('request');
+    // hash = require('pbkdf2-password')();
 
 var app = express();
 app.use(express.urlencoded({extended: true}))
@@ -10,7 +10,6 @@ app.use(express.urlencoded({extended: true}))
 var openweatherID = '4aed79a9343fa3db29c98df71346404b';
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const { render } = require('pug');
 const uri = "mongodb+srv://mayanhvu:bobo35VL%40@cluster0.7vur6.mongodb.net/project-530?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
@@ -20,7 +19,7 @@ app.set("views", "./views");
 
 // ROUTING //
 // Home page //
-app.get('/', function(req, res) {
+app.get('/home', function(req, res) {
     res.render('home');
 });
 
@@ -36,6 +35,8 @@ app.get('/register', function(req, res) {
 
 // Handling register - No input conditions atm
 app.post('/register', function(req, res) {
+
+
     var account = {
         username: req.body.username,
         password: req.body.password
@@ -79,7 +80,8 @@ app.post('/login', function(reqlogin, reslogin){
             }
             else {
                 console.log(document);
-                reslogin.send("<html> <a href='/view_weather'>View weather</a></html>");
+                reslogin.redirect('/view_weather');
+                // reslogin.send("<html> <a href='/view_weather'>View weather</a></html>");
             };
             
         });
@@ -87,7 +89,7 @@ app.post('/login', function(reqlogin, reslogin){
 });
 
 app.get("/view_weather", function (req, res) {
-    // It will not fetch and display any data in the index page
+    // This will not fetch and display any data in the index page
     res.render("view_weather", { weather: null, error: null });
 });
 

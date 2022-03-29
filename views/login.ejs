@@ -1,15 +1,50 @@
-<h1>login</h1>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Register</title>
+    
+        <meta charset="utf-8">
+        <meta
+          name="viewport"
+          content="initial-scale=1, shrink-to-fit=yes">
+    
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300"
+            rel="stylesheet"
+            type="text/css"
+        />
+    
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Login</h1>
+            <p>Enter your credentials</p>
  
-<form action="/login" method="POST">
-    <input type="text" name="username"
-        placeholder="username">
-    <input type="password" name="password"
-        placeholder="password">
-    <button>login</button>
-</form>
- 
-<h1>This is home page</h1>
+            <form action="/login" method="POST">
+                <label for="username">User name:</label>
+                <input type="text" name="username" placeholder="username" required> 
+                <label for="password">Password:</label>
+                <input type="password" name="password" placeholder="password" required> <br>
+                <button>login</button>
+            </form>
+            
+            <div>
+                <br>
+                <li><a href="/register">Sign up</a></li>
+                <li><a href="/home">Home</a></li>
+            </div>
+            
+            
+            
+            
+        </div>
 
-
-<li><a href="/register">Sign up!!</a></li>
-<li><a href="/login">Login</a></li>
+    </body>
+</html>

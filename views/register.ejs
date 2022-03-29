@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+          content="initial-scale=1, shrink-to-fit=yes">
     
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <link
@@ -21,18 +21,33 @@
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
             crossorigin="anonymous"
         />
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <h1>Register</h1>
+                <p>Enter your credentials</p>
+            </div>
+            
+            <div>
+                <form action="/register" method="POST">
+                    <label for="username">Username:</label> 
+                    <input type="text" name="username" placeholder="username" required> 
+                    <label for="password">Password:</label> 
+                    <input type="password" name="password" placeholder="password" required> <br>
+                    <button>Register</button>
+                </form>
+     
+                <div>
+                    <br>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/home">Home</a></li>
+                </div>
+            </div>
 
-<h1>Register</h1>
- 
-<form action="/register" method="POST">
-    <input type="text" name="username" placeholder="username" required>
-    <input type="password" name="password" placeholder="password" required>
-    <button>Register</button>
-</form>
- 
-<h1>This is register page</h1>
- 
-<li><a href="/home">Home</a></li>
-<li><a href="/login">Login</a></li>
+        </div>
+    </body>
+
+
 
 </html>
