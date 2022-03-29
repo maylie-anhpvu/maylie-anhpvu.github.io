@@ -2,7 +2,6 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     alert = require('alert'),
     request = require('request');
-    // hash = require('pbkdf2-password')();
 
 var app = express();
 app.use(express.urlencoded({extended: true}))
